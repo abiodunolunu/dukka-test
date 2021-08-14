@@ -1,4 +1,5 @@
-import { IEmployeeReducerAction, IEmployeeReducerState } from './EmployeeReducerTypes';
+import React from 'react';
+import { IEmployeeReducerAction, IEmployeeReducerState } from '../types/EmployeeReducerTypes';
 
 const employeeReducer: React.Reducer<IEmployeeReducerState, IEmployeeReducerAction> = (state, action) => {
     switch (action.type) {

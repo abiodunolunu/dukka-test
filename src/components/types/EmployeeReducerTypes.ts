@@ -1,4 +1,4 @@
-import { IEmployee } from "../types/types"
+import { IEmployee } from "./types"
 
 export interface IEmployeeReducerState {
     employees: IEmployee[]

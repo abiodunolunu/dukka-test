@@ -1,4 +1,4 @@
-import { IEmployeeReducerAction, IEmployeeReducerState } from "../Reducers/EmployeeReducerTypes";
+import { IEmployeeReducerAction, IEmployeeReducerState } from "./EmployeeReducerTypes";
 
 export interface IEmployee {
   id: string;
