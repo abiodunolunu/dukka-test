@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "react-router-dom";
+import "./App.css";
+import CreateEmployeeForm from "./components/CreateEmployeeForm/CreateEmployeeForm";
+import EmployeeList from "./components/Employee/EmployeeList";
+import EmployeeDetails from "./components/EmployeeDetails/EmployeeDetails";
+import NavBar from "./components/NavBar/NavBar";
+
+const routes = [
+  {
+    path: "/",
+    component: EmployeeList,
+    exact: true,
+  },
+  {
+    path: "/add-employee",
+    component: CreateEmployeeForm,
+  },
+  {
+    path: "/employee/:id",
+    component: EmployeeDetails,
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      {routes.map((aRoute) => {
+        return <Route path={aRoute.path} component={aRoute.component} exact={aRoute.exact} key={aRoute.path} />;
+      })}
     </div>
   );
 }

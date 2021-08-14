@@ -1,0 +1,98 @@
+.header {
+  padding: 4px 0;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+}
+
+.menu-icon {
+  width: 30px;
+  position: relative;
+  z-index: 201;
+  cursor: pointer;
+  span {
+    background-color: #555;
+    display: block;
+    height: 4px;
+
+    &:nth-of-type(2) {
+      margin: 4px 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    display: none;
+  }
+}
+
+.brand {
+  width: fit-content;
+  p {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font: {
+      size: 28px;
+      weight: 400;
+    }
+  }
+
+  small {
+    display: block;
+    text-align: right;
+    font: {
+      size: 12px;
+      weight: 400;
+    }
+  }
+}
+
+.nav-list {
+  display: flex;
+
+  li {
+    margin: 0 5px;
+  }
+
+  @media (max-width: 48rem) {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    padding-top: 40px;
+    background-color: #fff;
+    flex-direction: column;
+    box-shadow: 2px 4px 6px #b5b5b5;
+    transform: translateX(-300px);
+    transition: all 420ms ease;
+    &.nav-open {
+      transform: translateX(0px);
+    }
+
+    li {
+      text-transform: uppercase;
+      border-bottom: 1px solid #e5e5e5;
+      text-align: center;
+      margin: 0;
+      a {
+        padding: 2rem;
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// @keyframes slideIn {
+//   0% {
+//     transform: translateX(-280px);
+//   }
+
+//   100% {
+//     transform: translateX(0px);
+//   }
+// }
